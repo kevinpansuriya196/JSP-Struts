@@ -1,0 +1,36 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 24-11-2023
+  Time: 03:26 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@taglib prefix="s" uri="/struts-tags"%>
+<html>
+<head>
+    <title>Register</title>
+    <style type="text/css">
+        .button-register {background-color: green;color: white;}
+        .button-report {background-color: #000000;color: white;margin-left: 30%;}
+    </style>
+</head>
+<body>
+<h2>ADD EMPLOYEE DATA</h2>
+<a href="report"><button class="button-report" type="button">Report</button></a>
+<s:form action="registeruser.action" method="post">
+    <s:textfield label="Full Name" name="uname" />
+    <s:textfield label="Email" name="uemail" />
+    <s:password label="Password" name="upass" />
+    <s:textfield label="Designation" name="udeg" />
+    <s:submit cssClass="button-register" value="Resgister" />
+</s:form>
+<s:if test="ctr>0">
+    <span style="color: green;"><s:property value="msg" /></span>
+</s:if>
+<s:else>
+    <span style="color: red;"><s:property value="msg" /></span>
+</s:else>
+</body>
+</html>

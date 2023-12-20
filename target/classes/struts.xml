@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+<!--    <constant name="struts.devMode" value="true"/>-->
+<!--    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>-->
+
+    <package name="Default" extends="struts-default">
+
+        <default-action-ref name="report" />
+
+     <!--
+        <default-action-ref name="index" />
+        <action name="index" class="org.example.IndexAction">
+            <result>/WEB-INF/jsp/index.jsp</result>
+        </action>
+
+        <action name="helloWorld" class="helloWorldAction">
+            <result name="input">/WEB-INF/jsp/index.jsp</result>
+            <result>/WEB-INF/jsp/helloWorld.jsp</result>
+        </action>-->
+        <action name="registeruser" class="org.example.action.Register">
+            <result name="REGISTER">/register.jsp</result>
+            <result name="success">/redirect.jsp</result>
+
+        </action>
+        <action name="report" class="org.example.action.Report">
+            <result name="REPORT">/report.jsp</result>
+        </action>
+        <action name="updatedetails" class="org.example.action.Update">
+            <result name="UPDATE">/update.jsp</result>
+            <result name="success" type="redirect">/redirect.jsp</result>
+        </action>
+        <action name="deleterecord" class="org.example.action.Delete">
+            <result name="success">/redirect.jsp</result>
+<!--            <result name="DELETE">/delete.jsp</result>-->
+        </action>
+        <!-- redirect actions -->
+        <!--         <action name="registeruser" class="org.example.action.Register">
+                    <result name="success">/redirect.jsp</result>
+                </action>
+               <action name="updatedetails" class="org.example.action.Update">-->
+<!--            <result name="success">/redirect.jsp</result>-->
+<!--        </action>-->
+
+<!--        <global-results>-->
+<!--            <result name="error">redirect.jsp</result>-->
+<!--        </global-results>-->
+
+<!--        <global-exception-mappings>-->
+<!--            <exception-mapping exception="java.lang.Exception" result="error" />-->
+<!--        </global-exception-mappings>-->
+
+
+    </package>
+
+</struts>
